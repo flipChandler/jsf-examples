@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Student Table Demo - CSS</title>
+	<h:outputStylesheet library="css" name="student_table_demo.css" />
+</h:head>
+
+<h:body>
+	<h3>Student Table Demo - CSS</h3>
+	<hr/>
+	<br/>
+	
+	<h:dataTable var="tempStudent" value="#{studentDataUtil.students}" border="1"
+				 styleClass="demo-table"
+				 headerClass="demo-table-header"
+				 rowClasses="demo-table-odd-row,demo-table-even-row">
+		
+		<h:column>
+			<f:facet name="header">First Name</f:facet>
+			#{tempStudent.firstName}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Last Name</f:facet>
+			#{tempStudent.lastName}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Email</f:facet>
+			#{tempStudent.email}
+		</h:column>
+		
+	</h:dataTable>
+
+</h:body>
+
+</html>
